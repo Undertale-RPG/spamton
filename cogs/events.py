@@ -1,6 +1,7 @@
 import disnake
 from disnake.ext import commands, tasks
 
+
 class Events(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
@@ -24,7 +25,7 @@ class Events(commands.Cog):
 			for i in badges:
 				new_badges.append(i)
 			await self.bot.players.update_one({"_id" : user}, {"$set" : {"badges" : new_badges}})
-		print("Boosters have been updated")
+		print("Boosters have been updated!")
 
 	@commands.Cog.listener()
 	async def on_ready(self):
